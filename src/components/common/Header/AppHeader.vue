@@ -21,12 +21,12 @@ export default {
 </script>
 <template>
   <header aria-level="1" class="header" role="heading">
-    <router-link class="c-hand" to="/app" tag="h2">
+    <router-link class="c-hand" to="/app" title="Home">
       <svg class="icone icone-xl icone-light" role="presentation">
         <use :xlink:href="'#' + carIcon.id"></use>
       </svg>
     </router-link>
-    <router-link @click.native="cleanLocalInfo()" class="c-hand" tag="h2" to="/">
+    <router-link @click.native="cleanLocalInfo()" class="c-hand" title="Sair" to="/">
       <svg class="icone icone-lg icone-light logout" role="presentation">
         <use :xlink:href="'#' + logoutIcon.id"></use>
       </svg>

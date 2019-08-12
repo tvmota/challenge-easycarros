@@ -1,6 +1,6 @@
 <script>
 import login from '../services/LoginService';
-import alert from '../utils/alert';
+import swalAlert from '../utils/alert';
 
 export default {
   name: 'App-login',
@@ -27,7 +27,7 @@ export default {
           }).catch((err) => {
             const { data } = err.response;
             this.btnLoader = false;
-            alert.alertError(data.error.message, 'Login Inválido');
+            swalAlert.alertError(data.error.message, 'Login Inválido');
           });
       } else {
         this.btnLoader = false;

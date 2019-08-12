@@ -3,7 +3,7 @@ import AppHeader from '@/components/common/Header/AppHeader.vue';
 import AppFooter from '@/components/common/Footer/AppFooter.vue';
 import Loader from '@/components/common/Loader/Loader.vue';
 import AddVehicle from '@/components/custom/AddVehicle/AddVehicle.vue';
-import vehicleService from '../services/VehicleService';
+import ListVehicle from '@/components/custom/ListVehicle/ListVehicle.vue';
 
 export default {
   name: 'App-home',
@@ -11,12 +11,11 @@ export default {
     AppHeader,
     AppFooter,
     AddVehicle,
+    ListVehicle,
     Loader,
   },
   created() {
-    vehicleService.list()
-      .then(result => console.log(result.data))
-      .catch(err => console.log(err));
+    this.$store.dispatch('updateVehicles');
   },
 };
 </script>
@@ -26,7 +25,7 @@ export default {
     <AppHeader />
     <main class="home-content" role="main">
       <AddVehicle />
-      <div>asdsadasdasdas</div>
+      <ListVehicle />
     </main>
     <AppFooter />
     <Loader />

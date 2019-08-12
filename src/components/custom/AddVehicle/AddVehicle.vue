@@ -1,6 +1,8 @@
 <script>
 // eslint-disable-next-line
 import addIcon from '../../../assets/img/icons/plus.svg?sprite';
+import vehicleService from '../../../services/VehicleService';
+import swalAlert from '../../../utils/alert';
 
 export default {
   name: 'App-add-vehicle',
@@ -8,13 +10,23 @@ export default {
     return {
       addIcon,
       inputTypes: ['text'],
+      vehicle: {
+        plate: '',
+      },
     };
   },
   methods: {
     handleSubmit() {
-      console.log('ahdkjahsdjs');
       if (this.$refs.frmAddVehicle.checkValidity()) {
-        console.log('ahdkjahsdjs');
+        vehicleService.add(this.vehicle).then((result) => {
+          if (result.status === 200) {
+            swalAlert.alertSuccess('Veículo adicionado com sucesso', 'Veículo');
+            this.vehicle.plate = '';
+            this.$store.dispatch('updateVehicles');
+          }
+        }).catch((err) => {
+          swalAlert.alertError(err.response.data.error.message, 'Erro');
+        });
       } else {
         Array.from(this.$refs.frmAddVehicle.elements).forEach((input) => {
           if (this.inputTypes.indexOf(input.type) >= 0) {
@@ -54,12 +66,14 @@ export default {
         <div class="add-vehicle-frm--input">
           <input
             class="add-vehicle-frm--input--success"
+            maxlength="7"
             name="plateInput"
             pattern="[a-zA-Z]{3}[0-9]{4}"
             placeholder="Placa"
             ref="plateInput"
             required
             type="text"
+            v-model="vehicle.plate"
             @blur="validatePlate('plateInput')">
           <button title="Adicionar Carro" type="submit">
             <svg class="icone icone-md icone-light" role="presentation">
