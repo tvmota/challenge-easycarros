@@ -2,7 +2,7 @@
 
 Projeto para teste de processo seletivo da easycarros
 
-#OBS:
+# OBS:
 Na Api é necessario habilitar o CORS para consumo pela parte do front
 
 ## Instruções de para instalação das dependncias
