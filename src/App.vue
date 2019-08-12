@@ -17,7 +17,7 @@ export default {
 <style lang="scss">
 @import './assets/css/_base/_normalize';
 @import './assets/css/_base/_base';
-
+@import '~sweetalert2/src/sweetalert2';
 .app {
   display: flex;
   flex-direction: column;

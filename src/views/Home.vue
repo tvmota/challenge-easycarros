@@ -1,12 +1,22 @@
 <script>
 import AppHeader from '@/components/common/Header/AppHeader.vue';
 import AppFooter from '@/components/common/Footer/AppFooter.vue';
+import Loader from '@/components/common/Loader/Loader.vue';
+import AddVehicle from '@/components/custom/AddVehicle/AddVehicle.vue';
+import vehicleService from '../services/VehicleService';
 
 export default {
   name: 'App-home',
   components: {
     AppHeader,
     AppFooter,
+    AddVehicle,
+    Loader,
+  },
+  created() {
+    vehicleService.list()
+      .then(result => console.log(result.data))
+      .catch(err => console.log(err));
   },
 };
 </script>
@@ -15,9 +25,11 @@ export default {
   <div class="home">
     <AppHeader />
     <main class="home-content" role="main">
-      lista
+      <AddVehicle />
+      <div>asdsadasdasdas</div>
     </main>
     <AppFooter />
+    <Loader />
   </div>
 </template>
 
