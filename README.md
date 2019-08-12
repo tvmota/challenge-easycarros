@@ -1,34 +1,56 @@
-# teste-easy-carros
+# Challenge-easycarros
 
-## Project setup
-```
-yarn install
-```
+Projeto para teste de processo seletivo da easycarros
 
-### Compiles and hot-reloads for development
-```
-yarn run serve
-```
+#OBS:
+Na Api é necessario habilitar o CORS para consumo pela parte do front
 
-### Compiles and minifies for production
-```
-yarn run build
-```
+## Instruções de para instalação das dependncias
+```bash
+$ git clone https://github.com/tvmota/challenge-easycarros.git
+$ cd challenge-easycarros
 
-### Run your tests
-```
-yarn run test
+#----------Execução_Com_NPM---------
+$ npm i
+#----------Execução_Com_YARN---------
+$ yarn
 ```
 
-### Lints and fixes files
-```
-yarn run lint
+## Instruções de para execução local
+- Acessar no browser http://localhost:8080
+```bash
+$ cd challenge-easycarros
+
+#----------Execução_Com_NPM---------
+$ npm run serve
+#----------Execução_Com_YARN---------
+$ yarn serve
 ```
 
-### Run your unit tests
-```
-yarn run test:unit
+### Instruções para execução dos testes
+```bash
+$ cd challenge-easycarros
+
+#----------Execução_Com_NPM---------
+$ npm run test:unit
+#----------Execução_Com_YARN---------
+$ yarn test:unit
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Instruções para geração do build para deploy
+```bash
+$ cd challenge-easycarros
+
+#----------Execução_Com_NPM---------
+$ npm run build
+#----------Execução_Com_YARN---------
+$ yarn build
+```
+
+## Libs Utilizadas
+- Biblioteca UI: [Vuejs](https://vuejs.org)
+- AJAX: [Axios](https://github.com/axios/axios)
+- State Management: [Vuex](https://vuex.vuejs.org/)
+- Roteamento: [Vue-router](https://router.vuejs.org/)
+- Tooling/scafolding: [Vue-CLI](https://cli.vuejs.org/)
+- Alert: [SweetAlert](https://sweetalert2.github.io/)
