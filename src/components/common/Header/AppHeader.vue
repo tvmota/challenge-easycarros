@@ -21,10 +21,11 @@ export default {
 </script>
 <template>
   <header aria-level="1" class="header" role="heading">
-    <router-link class="c-hand" to="/app" title="Home">
+    <router-link class="c-hand header-logo" tag="h2" to="/app" title="Home">
       <svg class="icone icone-xl icone-light" role="presentation">
         <use :xlink:href="'#' + carIcon.id"></use>
       </svg>
+      Lista de Veículos
     </router-link>
     <router-link @click.native="cleanLocalInfo()" class="c-hand" title="Sair" to="/">
       <svg class="icone icone-lg icone-light logout" role="presentation">
@@ -48,6 +49,15 @@ export default {
   padding: pxToRem(20);
   justify-content: space-between;
   align-items: center;
+
+  &-logo {
+    align-items: center;
+    display: flex;
+
+    svg {
+      margin-right: pxToRem(8);
+    }
+  }
 }
 
 .logout {

@@ -5,8 +5,12 @@ export default {
 </script>
 <template>
   <footer class="container-footer" role="contentinfo">
-    <a class="container-footer--link" href="#" target="_blank">
-      GitHub
+    <a
+      class="container-footer--link"
+      href="https://github.com/tvmota/challenge-easycarros"
+      target="_blank"
+      title="Codigo fonte">
+        GitHub
     </a>
   </footer>
 </template>

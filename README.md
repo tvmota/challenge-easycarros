@@ -54,3 +54,4 @@ $ yarn build
 - Roteamento: [Vue-router](https://router.vuejs.org/)
 - Tooling/scafolding: [Vue-CLI](https://cli.vuejs.org/)
 - Alert: [SweetAlert](https://sweetalert2.github.io/)
+- Paginação: [Vuejs-Paginate](https://github.com/lokyoung/vuejs-paginate)
